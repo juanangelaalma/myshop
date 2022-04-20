@@ -3,7 +3,7 @@ import { Jumbotron, Navbar } from '../../components'
 
 const Header = () => {
   return (
-    <div className='home__header'>
+    <div className='header'>
       <Navbar />
       <Jumbotron />
     </div>
