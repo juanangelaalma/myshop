@@ -1,0 +1,147 @@
+/* containernya */
+.header__navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 6rem;
+}
+
+/* pembungkus logo dan links ketika desktop view */
+.header__navbar-links {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* container logo */
+.header__navbar-links_logo {
+  margin-right: 2rem;
+}
+
+/* logonya */
+.header__navbar-links_logo h1 {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+
+  color: var(--main-text-color);
+}
+
+/* container links dekstop view */
+.header__navbar-links_container {
+  display: flex;
+  flex-direction: row;
+}
+
+/* links dekstop view dan mobile view */
+.header__navbar-links_container p,
+.header__navbar-menu_container p {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+
+  color: var(--second-text-color);
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+/* links dekstop view dan mobile view */
+.header__navbar-links_container p a,
+.header__navbar-menu_container p a {
+  transition: 600ms;
+}
+
+/* links dekstop view dan mobile view saat active */
+.header__navbar-links_container p.active,
+.header__navbar-menu_container p.active {
+  font-weight: 500;
+  color: var(--main-text-color);
+}
+
+/* links desktop view dan mobile view saat hover */
+.header__navbar-links_container p a:hover,
+.header__navbar-menu_container p a:hover {
+  font-weight: 400;
+  color: var(--main-text-color);
+}
+
+/* links desktop view dan mobile view saat hover(khusus yang active) */ 
+.header__navbar-links_container p.active a:hover,
+.header__navbar-menu_container p.active a:hover {
+  font-weight: 500;
+  color: var(--main-text-color);
+}
+
+/* links dan input saat dekstop view */
+.header__navbar-links_container p,
+.header__navbar-links_container input {
+  margin: 0 3rem 0 0;
+}
+
+/* paragraph mobile view */
+.header__navbar-menu_container p {
+  margin-bottom: 1rem;
+}
+
+/* menu mobile view */
+.header__navbar-menu {
+  margin-left: 1rem;
+
+  display: none;
+  position: relative;
+}
+
+/* icon menu */
+.header__navbar-menu svg {
+  cursor: pointer;
+}
+
+/* container links mobile view */
+.header__navbar-menu_container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+
+  text-align: center;
+  background-color: var(--main-color);
+  padding: 1rem;
+  position: absolute;
+  top: 40px;
+  right: 0;
+  margin-left: 1rem;
+  min-width: 210px;
+  border: 1px solid #E5E5E5;
+  box-shadow: 0 0 5 rgba(0, 0, 0, 0.2);
+}
+
+
+@media screen and (max-width: 1050px) {
+  /* ketika tablet view maka link yang horizontal disembunyikan */
+  .header__navbar-links_container{
+    display: none;
+  }
+  /* ketika tablet view maka icon menu akan dimunculkan */
+  .header__navbar-menu {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  /* perumbahan padding saat mobile view */
+  .header__navbar {
+    padding: 1rem 2rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  /* perubahan posisi link saat mobile view */
+  .header__navbar-menu_container {
+    top: 40px;
+  }
+}
