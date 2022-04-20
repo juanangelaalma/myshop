@@ -1,8 +1,21 @@
 import React from 'react'
 
+import headerImage from "../../assets/images/header_image.jpg"
+
+import "./jumbotron.css"
+
 const Jumbotron = () => {
   return (
-    <div>Jumbotron</div>
+    <div className='header__jumbotron section__margin'>
+      <div className="header__jumbotron-content">
+        <h1>Find the product you want on MYSHOP</h1>
+        <p>Myshop is an e-commerce that can provide the best experience for buying and selling products</p>
+        <button className='btn-main'>Explore Products</button>
+      </div>
+      <div className="header__jumbotron-image">
+        <img src={headerImage} alt="Explore products myshop" />
+      </div>
+    </div>
   )
 }
 

@@ -1,14 +1,55 @@
 .section__padding {
-  padding: 4rem 6rem;
+  padding: 2rem 6rem;
 }
 
 .section__margin {
-  margin: 4rem 6rem;
+  margin: 2rem 6rem;
 }
 
 .scale-up-center {
   -webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
   animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+.btn-main {
+  border: none;
+  outline: none;
+  padding: 1rem 2rem;
+  background-color: var(--third-color);
+  color: var(--third-text-color);
+
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+
+  padding: 1rem 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 1s;
+  border: 1px solid var(--main-text-color);
+}
+
+.btn-main:hover {
+  color: var(--main-text-color);
+  background-color: transparent;
+}
+
+.btn-main::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50px;
+  width: 0;
+  height: 100%;
+  background-color: var(--main-color);
+  transform: skewX(35deg);
+  z-index: -1;
+  transition: width 2s;
+}
+
+.btn-main:hover::before {
+  width: 150%;
 }
 
 @-webkit-keyframes scale-up-center {
@@ -38,20 +79,20 @@
 
 @media screen and (max-width: 700px) {
   .section__padding {
-    padding: 4rem;
+    padding: 2rem 4rem;
   }
 
   .section__margin {
-    margin: 4rem;
+    margin: 2rem 4rem;
   }
 }
 
 @media screen and (max-width: 550px) {
   .section__padding {
-    padding: 4rem 2rem;
+    padding: 2rem 2rem;
   }
 
   .section__margin {
-    margin: 4rem 2rem;
+    margin: 2rem 2rem;
   }
 }
