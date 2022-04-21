@@ -1,0 +1,226 @@
+.product {
+  display: flex;
+  flex-direction: column;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.product__image {
+  flex: 1;
+}
+
+.product__image img {
+  width: 100%;
+  height: auto;
+}
+
+.product__content {
+  padding: 2rem 0;
+}
+
+.product__content-attr {
+  display: flex;
+  flex-direction: column;
+}
+
+.product__content-attr_category {
+  font-family: var(--font-family);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 24px;
+  /* identical to box height */
+  
+  margin-bottom: 1rem;
+  color: var(--second-text-color);
+}
+
+.product__content-attr_name {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 38px;
+  
+  margin-bottom: 1rem;
+  color: var(--main-text-color);
+}
+
+.product__content-attr_description {
+  font-family: var(--font-family);
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 30px;
+  /* or 178% */
+  
+  margin-bottom: 1rem;
+  color: var(--second-text-color);
+}
+
+.product__content-attr_price {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 38px;
+  /* identical to box height */
+  
+  margin-bottom: 1.5rem;
+  color: var(--main-text-color);
+}
+
+.product__content-action {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-items: flex-start;
+}
+
+.product__content-action_count {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.product__content-action_count-decre,
+.product__content-action_count-incre {
+  max-width: 38px;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+
+  background: var(--main-color);
+  border: 2px solid var(--main-text-color);
+  box-sizing: border-box;
+  color: var(--main-text-color);
+  cursor: pointer;
+
+  font-family: var(--font-family);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.product__content-action_count-decre:active,
+.product__content-action_count-incre:active {
+  background-color: var(--second-color);
+}
+
+.product__content-action_count h4 {
+  margin: 0 1rem;
+  font-family: var(--font-family);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 38px;
+  /* identical to box height */
+
+  color: var(--main-text-color);
+}
+
+.product__content-action_addtocart {
+  /* margin: 0 auto 0 0; */
+  margin: 0 !important;
+}
+
+@media screen and (min-width: 700px) {
+  .product__content-attr_name {
+    font-size: 48px;
+    line-height: 57px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .product__content-attr_category {
+    font-size: 36px;
+    line-height: 43px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .product__content-attr_description {
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .product__content-attr_price {
+    font-size: 48px;
+    line-height: 57px;
+    margin-bottom: 2rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .product {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  .product__image {
+    width: 50%;
+    /* padding-left: 2rem;
+    padding-right: 2rem; */
+    box-sizing: border-box;
+  }
+
+  .product__content {
+    width: 50%;
+    padding: 0 2rem;
+  }  
+
+  .product__content-attr_name {
+    font-size: 32px;
+    line-height: 38px;
+    margin-bottom: 1rem;
+  }
+  
+  .product__content-attr_category {
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 1rem;
+  }
+  
+  .product__content-attr_description {
+    font-size: 18px;
+    line-height: 30px;
+    margin-bottom: 1rem
+  }
+  
+  .product__content-attr_price {
+    font-size: 32px;
+    line-height: 38px;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .product__image {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .product__content-attr_name {
+    font-size: 48px;
+    line-height: 57px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .product__content-attr_category {
+    font-size: 36px;
+    line-height: 43px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .product__content-attr_description {
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .product__content-attr_price {
+    font-size: 48px;
+    line-height: 57px;
+    margin-bottom: 2rem;
+  }
+}
