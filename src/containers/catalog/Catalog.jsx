@@ -5,7 +5,7 @@ import "./catalog.css"
 
 const Catalog = ({ buttonMore, categories }) => {
   return (
-    <div className='catalog catalog__container section__padding'>
+    <div style={{ backgroundColor: "#F4F4F4" }} className='catalog section__padding'>
       <h1 className='catalog__title'>Products</h1>
       { categories && (
         <div className='catalog__categories'>

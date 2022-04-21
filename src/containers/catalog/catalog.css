@@ -4,10 +4,6 @@
   box-sizing: border-box;
 }
 
-.catalog .catalog__container {
-  background-color: var(--second-color);
-}
-
 .catalog__title {
   text-align: center;
 
