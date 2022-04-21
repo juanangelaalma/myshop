@@ -3,10 +3,17 @@ import { CardProduct } from '../../components'
 
 import "./catalog.css"
 
-const Catalog = () => {
+const Catalog = ({ buttonMore, categories }) => {
   return (
-    <div className='catalog section__padding'>
+    <div className='catalog catalog__container section__padding'>
       <h1 className='catalog__title'>Products</h1>
+      { categories && (
+        <div className='catalog__categories'>
+          { categories.map(category => (
+            <li>{ category }</li>
+          )) }
+        </div>
+      ) }
       <div className='catalog__products'>
         <CardProduct />
         <CardProduct />
@@ -17,7 +24,7 @@ const Catalog = () => {
         <CardProduct />
         <CardProduct />
       </div>
-      <button className='btn-main'>See all products</button>
+      { buttonMore && <button className='btn-main'>See all products</button> }
     </div>
   )
 }

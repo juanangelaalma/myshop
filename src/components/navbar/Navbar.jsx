@@ -2,13 +2,15 @@ import React, { useState } from 'react'
 import { RiCloseLine, RiMenu3Line } from 'react-icons/ri'
 import Search from '../input-search/Search'
 
+import { Link } from 'react-router-dom'
+
 import "./navbar.css"
 
 const Menu = () => (
   <>
-    <p className='active'> <a href="">Home</a> </p>
-    <p> <a href="">Products</a> </p>
-    <p> <a href="">About</a> </p>
+    <p className='active'> <Link to="/">Home</Link> </p>
+    <p> <Link to="/products">Products</Link> </p>
+    <p> <Link to="/about">About</Link> </p>
     <Search />
   </>
 )
