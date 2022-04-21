@@ -1,8 +1,12 @@
 import React from 'react'
+import { Outlet } from 'react-router-dom'
 
 const Catalog = () => {
   return (
-    <div>Catalog</div>
+    <div>
+      <div>Catalog</div>
+      <Outlet />
+    </div>
   )
 }
 
