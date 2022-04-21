@@ -1,0 +1,120 @@
+.footer {
+  background-color: var(--main-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.footer__brand h1 {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
+
+  color: var(--main-text-color);
+  margin-bottom: 1rem;
+}
+
+.footer__brand p {
+  font-family: var(--font-family);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: var(--main-text-color);
+}
+
+.footer__content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer__content-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  margin: 1rem;
+  align-items: center;
+}
+
+.footer__content-item:first-child {
+  width: 100%;
+}
+
+.footer__content-item h1 {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  /* identical to box height */
+
+  color: var(--main-text-color);
+  margin-bottom: 1rem;
+}
+
+.footer__content-item img {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.footer__content-item_list {
+  font-family: var(--font-family);
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  /* identical to box height */
+
+  color: var(--main-text-color);
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 700px) {
+  .footer__content {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+
+  .footer__content-item {
+    align-items: flex-start;
+    flex: 2;
+  }
+
+  .footer__content-item:first-child {
+    width: auto;
+    flex: 3;
+  }
+}
+
+@media (min-width: 900px) {
+  .footer {
+    flex-direction: row;
+  }
+  .footer__brand {
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 1rem;
+    flex: 2;
+  }
+  .footer__content {
+    flex: 5;
+    justify-content: flex-end;
+  }
+
+  .footer__brand h1, .footer__brand p {
+    text-align: left;
+  }
+}
