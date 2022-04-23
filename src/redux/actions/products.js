@@ -1,4 +1,4 @@
-import axios from "axios";
+import productsApi from "../../apis/productsApi";
 import { GET_PRODUCTS_FAILURE, GET_PRODUCTS_REQUEST, GET_PRODUCTS_SUCCESS } from "./type";
 
 const getProductsRequest = () => ({
@@ -15,14 +15,12 @@ const getProductsFailure = (error) => ({
   payload: error,
 });
 
-const url = "https://fakestoreapi.com/products";
-
 
 export const fetchProducts = () => {
-  return async function (dispatch, getState) {
+  return async function (dispatch) {
     dispatch(getProductsRequest())
     try {
-      const response = await axios.get(url)
+      const response = await productsApi.get()
       dispatch(getProductsSuccess(response.data))
     }catch(error) {
       dispatch(getProductsFailure(error.message))
@@ -34,7 +32,7 @@ export const fetchProductsLimit = () => {
   return async function (dispatch, getState) {
     dispatch(getProductsRequest())
     try {
-      const response = await axios.get(`${url}?limit=8`)
+      const response = await productsApi.get("?limit=8")
       dispatch(getProductsSuccess(response.data))
     }catch(err) {
       dispatch(getProductsFailure(err.message))
