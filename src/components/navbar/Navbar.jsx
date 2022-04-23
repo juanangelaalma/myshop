@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { RiCloseLine, RiMenu3Line } from 'react-icons/ri'
 import Search from '../input-search/Search'
 
@@ -16,7 +16,9 @@ const Menu = () => (
 )
 
 const Navbar = () => {
+  const menu = useRef()
   const [toggleMenu, setToggleMenu] = useState(false)
+
   return (
     <div className='header__navbar'>
       <div className="header__navbar-links">
@@ -35,7 +37,7 @@ const Navbar = () => {
         }
         {
           toggleMenu && (
-            <div className="header__navbar-menu_container scale-up-center">
+            <div ref={menu} className="header__navbar-menu_container scale-up-center">
               <Menu />
             </div>
           )
