@@ -1,16 +1,17 @@
 import axios from "axios";
+import { GET_PRODUCTS_FAILURE, GET_PRODUCTS_REQUEST, GET_PRODUCTS_SUCCESS } from "./type";
 
 const getProductsRequest = () => ({
-  type: "GET_PRODUCTS_REQUEST",
+  type: GET_PRODUCTS_REQUEST,
 });
 
 const getProductsSuccess = (products) => ({
-  type: "GET_PRODUCTS_SUCCESS",
+  type: GET_PRODUCTS_SUCCESS,
   payload: products,
 });
 
 const getProductsFailure = (error) => ({
-  type: "GET_PRODUCTS_FAILURE",
+  type: GET_PRODUCTS_FAILURE,
   payload: error,
 });
 
