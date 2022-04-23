@@ -1,10 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
 import { Navbar } from '../../components'
 import { Footer } from '../../containers'
+import { setMenuActive } from '../../redux/actions/navbar'
 
 import "./about.css"
 
 const About = () => {
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    // set menu active
+    dispatch(setMenuActive("about"))
+  }, [])
+  
   return (
     <div className='about'>
       <Navbar />

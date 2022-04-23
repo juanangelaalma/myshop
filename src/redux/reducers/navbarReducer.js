@@ -1,6 +1,8 @@
 import { SET_MENU } from "../actions/type"
 
-const initialState = "home"
+const initialState = {
+  active: "home"
+}
 
 export default function(state = initialState, action) {
   switch(action.type){

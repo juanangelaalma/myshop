@@ -7,8 +7,16 @@ import { fetchProductsService } from '../../services/products.services'
 import { fetchProducts } from '../../redux/actions/products'
 
 import "./catalog.css"
+import { setMenuActive } from '../../redux/actions/navbar'
 
 const Catalog = () => {
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    // set menu active
+    dispatch(setMenuActive("products"))
+  }, [])
+  
   return (
     <div className='catalog'>
       <Navbar />
