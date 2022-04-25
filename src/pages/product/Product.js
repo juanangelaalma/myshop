@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import productsApi from "../../apis/productsApi";
+import Loader from "../../components/loader/Loader";
 
 import "./product.css";
 
@@ -40,7 +41,7 @@ const Product = () => {
   return (
     <div className="section__padding">
       {loading && (
-        <div className="loading__bar section__margin">Loading...</div>
+        <Loader />
       )}
       {dataProduct && !error && !loading && (
         <div className="product section__padding">

@@ -61,12 +61,6 @@ html {
   width: 150%;
 }
 
-.loading__bar {
-  margin: auto;
-  font-size: 20px;
-  font-family: var(--font-family);
-}
-
 @-webkit-keyframes scale-up-center {
   0% {
     -webkit-transform: scale(0.5);

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { CardProduct } from "../../components";
 import Categories from "../../components/categories/Categories";
+import Loader from "../../components/loader/Loader";
 import {
   fetchProductByCategory,
   fetchProducts,
@@ -48,7 +49,7 @@ const Catalog = ({ buttonMore, categories, all }) => {
       <h1 className="catalog__title">Products</h1>
       {categories && <Categories />}
       <div className="catalog__products">
-        {products.loading && <p className="loading__bar">loading...</p>}
+        {products.loading && <Loader /> }
         {!products.loading &&
           products.products &&
           products.products.map((product) => (
