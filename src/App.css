@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 .section__padding {
   padding: 2rem 6rem;
 }
@@ -17,6 +21,9 @@
   padding: 1rem 2rem;
   background-color: var(--third-color);
   color: var(--third-text-color);
+  width: 200px;
+  display: flex;
+  justify-content: center;
 
   font-family: var(--font-family);
   font-weight: 500;
