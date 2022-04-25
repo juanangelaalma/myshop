@@ -13,6 +13,7 @@ const Catalog = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
+    window.scrollTo(0,0)
     // set menu active
     dispatch(setMenuActive("products"))
   }, [])
