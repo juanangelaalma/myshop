@@ -16,6 +16,7 @@ const App = () => {
           <Route path="products" element={<Catalog />}>
             <Route index element={<CatalogContainer buttomMore="false" all categories />} />
             <Route path=":idProduct" element={<Product />} />
+            <Route path="category/:category" element={<CatalogContainer buttomMore="false" all categories />} />
           </Route>
         </Routes>
       </BrowserRouter>

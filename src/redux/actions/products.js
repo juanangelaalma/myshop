@@ -39,3 +39,15 @@ export const fetchProductsLimit = () => {
     }
   }
 }
+
+export const fetchProductByCategory = (category) => {
+  return async function(dispatch) {
+    dispatch(getProductsRequest())
+    try {
+      const response = await productsApi.get(`/category/${category}`)
+      dispatch(getProductsSuccess(response.data))
+    }catch(err) {
+      dispatch(getProductsFailure(err.message))
+    }
+  }
+}
