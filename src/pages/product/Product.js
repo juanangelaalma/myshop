@@ -20,13 +20,16 @@ const Product = () => {
         setLoading(false);
         setDataProduct(response.data);
         setError(null);
-        document.scrollTop = 0;
       })
       .catch((err) => {
         setLoading(false);
         setError(err.message);
       });
   }, []);
+
+  useEffect(() => {
+    window.scrollTo(0,0);
+  }, [])
 
   const increment = () => {
     setCount(count + 1);
