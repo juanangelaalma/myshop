@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import { CardProduct } from '../../components'
+import Categories from '../../components/categories/Categories'
 import { fetchProducts, fetchProductsLimit } from '../../redux/actions/products'
 
 import "./catalog.css"
@@ -8,6 +10,7 @@ import "./catalog.css"
 const Catalog = ({ buttonMore, categories, all }) => {
   const products = useSelector(state => state.products)
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   useEffect(() => {
     if(all) {
@@ -17,16 +20,16 @@ const Catalog = ({ buttonMore, categories, all }) => {
     }
   }, [])
 
+  const onClickMore = () => {
+    return navigate("/products")
+  }
+
 
   return (
     <div style={{ backgroundColor: "#F4F4F4" }} className='catalog section__padding'>
       <h1 className='catalog__title'>Products</h1>
       { categories && (
-        <div className='catalog__categories'>
-          { categories.map((category, id) => (
-            <li key={id}>{ category }</li>
-          )) }
-        </div>
+        <Categories />
       ) }
       <div className='catalog__products'>
         { products.loading && <p className='loading__bar'>loading...</p> }
@@ -35,7 +38,7 @@ const Catalog = ({ buttonMore, categories, all }) => {
         )) }
         { products.error && <p>{ products.error }</p> }
       </div>
-      { buttonMore && <button className='btn-main'>See all products</button> }
+      { buttonMore && <button onClick={onClickMore} className='btn-main'>See all products</button> }
     </div>
   )
 }
