@@ -1,0 +1,79 @@
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--second-color);
+  width: 100%;
+  height: 100vh;
+}
+
+
+.login__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 2rem;
+  background: var(--main-color);
+  width: 80%;
+  box-sizing: border-box;
+}
+
+.login__card h1 {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  margin: 0 auto 2rem;
+
+  color: var(--main-text-color);
+}
+
+.login__card-form_container {
+  position: relative;
+  width: 100%;
+  margin-bottom: 1.3rem;
+}
+
+.login__card-form_container svg {
+  position: absolute;
+  top: 20%;
+  left: 10px;
+}
+
+.login__card-form_container input {
+  height: 40px;
+  outline: none;
+  padding: 1rem 0.5rem 1rem 2.5rem;
+  border: 2px solid #000;
+  width: 100%;
+  box-sizing: border-box;
+
+  font-size: 16px;
+  font-weight: 300;
+  font-family: var(--font-family);
+
+  color: var(--main-text-color);
+}
+
+.login__card-form_container input::placeholder {
+  color: var(--main-text-color);
+  font-family: var(--font-family);
+  font-weight: 300;
+}
+
+.login .login__card .btn-main {
+  padding: 0.5rem;
+  width: 100%;
+  margin-top: 1.8rem;
+}
+
+@media screen and (min-width: 700px) {
+  .login__card {
+    width: 400px;
+    padding: 4rem 3rem; 
+  }
+
+  .login__card-form {
+    width: 100%;
+  }
+}

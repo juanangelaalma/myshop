@@ -26,7 +26,7 @@ const Menu = () => {
         <Link to="/about">About</Link>{" "}
       </p>
       <Search />
-      <button className="btn-main btn-login">LOGIN</button>
+      <Link to="/login" className="btn-main btn-login">LOGIN</Link>
     </>
   );
 };
