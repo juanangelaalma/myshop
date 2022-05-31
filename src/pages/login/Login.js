@@ -1,23 +1,49 @@
-import React from "react";
+import React, { useState } from "react";
 import { AiOutlineUser, AiOutlineLock } from 'react-icons/ai'
+import { useDispatch, useSelector } from "react-redux";
+import { Navigate } from 'react-router-dom'
+import Loader from "../../components/loader/Loader";
+import { login } from "../../redux/actions/auth";
 
 import './login.css'
 
 const Login = () => {
+  const [username, setUsername] = useState("")
+  const [password, setPassword] = useState("")
+  
+  const dispatch = useDispatch()
+
+  const auth = useSelector(state => state.auth)
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    dispatch(login({ username, password }))
+  }
+
+  if(auth.token) {
+    return <Navigate to={"/"} />
+  }
+
+  if(auth.error) {
+    alert(auth.error)
+  }
+
   return (
     <div className="login">
       <div className="login__card">
         <h1>MYSHOP</h1>
-        <form action="" className="login__card-form">
+        <form action="" onSubmit={handleSubmit} className="login__card-form">
           <div className="login__card-form_container">
-            <input type="text" placeholder="Joko Susilo" />
+            <input value={username} onChange={(e) => setUsername(e.target.value)} type="text" placeholder="Joko Susilo" />
             <AiOutlineUser size={22} color="#000" />
           </div>
           <div className="login__card-form_container">
-            <input type="text" placeholder="*********" />
+            <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder="*********" />
             <AiOutlineLock size={22} color="#000" />
           </div>
-          <button type="submit" className="btn-main">SIGN IN</button>
+          <button type="submit" className="btn-main">
+            { auth.loading ? "LOADING..." : 'SIGN IN' }
+          </button>
         </form>
       </div>
     </div>
