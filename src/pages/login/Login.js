@@ -1,19 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AiOutlineUser, AiOutlineLock } from 'react-icons/ai'
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate } from 'react-router-dom'
 import Loader from "../../components/loader/Loader";
+import useLocalStorage from "../../hooks/useLocalStorage";
 import { login } from "../../redux/actions/auth";
+import { LOGIN_FAILURE } from "../../redux/actions/type";
 
 import './login.css'
 
 const Login = () => {
+  // state
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
-  
-  const dispatch = useDispatch()
 
   const auth = useSelector(state => state.auth)
+  const dispatch = useDispatch()
+
+  const [token, setToken] = useLocalStorage("token", auth.token)
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -21,11 +25,13 @@ const Login = () => {
   }
 
   if(auth.token) {
-    return <Navigate to={"/"} />
+    setToken(auth.token)
+    return <Navigate to="/" />
   }
 
   if(auth.error) {
     alert(auth.error)
+    dispatch({ type: LOGIN_FAILURE, payload: null })
   }
 
   return (
