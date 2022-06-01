@@ -120,6 +120,15 @@
   box-shadow: 0 0 5 rgba(0, 0, 0, 0.2);
 }
 
+.btn-login {
+  padding: 0.5rem 1rem !important;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  margin-left: 1.5rem !important;
+  max-width: 95px !important;
+}
+
 
 @media screen and (max-width: 1050px) {
   /* ketika tablet view maka link yang horizontal disembunyikan */
@@ -129,6 +138,9 @@
   /* ketika tablet view maka icon menu akan dimunculkan */
   .header__navbar-menu {
     display: flex;
+  }
+  .btn-login {
+    margin: 1rem auto 0 !important;
   }
 }
 

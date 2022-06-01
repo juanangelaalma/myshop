@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import "./App.css"
 import { About, Catalog, Home, Product } from './pages'
 import { Catalog as CatalogContainer } from './containers'
+import Login from './pages/login/Login'
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
             <Route path=":idProduct" element={<Product />} />
             <Route path="category/:category" element={<CatalogContainer buttomMore="false" all categories />} />
           </Route>
+          <Route path="login" element={<Login />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
