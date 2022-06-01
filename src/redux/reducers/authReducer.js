@@ -1,7 +1,9 @@
 import { LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS } from '../actions/type'
 
+const token = JSON.parse(localStorage.getItem("token"))
+
 const initialState = {
-  token: "",
+  token: token ? token : "",
   error: null,
   loading: false
 }
