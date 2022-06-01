@@ -17,7 +17,7 @@ const Login = () => {
   const auth = useSelector(state => state.auth)
   const dispatch = useDispatch()
 
-  const [token, setToken] = useLocalStorage("token", auth.token)
+  const [token, setToken] = useLocalStorage("token", "")
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -33,6 +33,7 @@ const Login = () => {
     alert(auth.error)
     dispatch({ type: LOGIN_FAILURE, payload: null })
   }
+
 
   return (
     <div className="login">
