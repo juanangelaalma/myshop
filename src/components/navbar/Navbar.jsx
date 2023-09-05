@@ -15,18 +15,16 @@ const Menu = () => {
     <>
       <p className={active === "home" ? "active" : ""}>
         {" "}
-        <Link to="/">Home</Link>{" "}
+        <Link to="/">Beranda</Link>{" "}
       </p>
       <p className={active === "products" ? "active" : ""}>
         {" "}
-        <Link to="/products">Products</Link>{" "}
+        <Link to="/products">Produk Kami</Link>{" "}
       </p>
       <p className={active === "about" ? "active" : ""}>
         {" "}
-        <Link to="/about">About</Link>{" "}
+        <Link to="/about">Tentang</Link>{" "}
       </p>
-      <Search />
-      <Link to="/login" className="btn-main btn-login">LOGIN</Link>
     </>
   );
 };
@@ -40,7 +38,7 @@ const Navbar = () => {
       <div className="header__navbar-links">
         <div className="header__navbar-links_logo">
           <Link to="/">
-            <h1>MYSHOP</h1>
+            <h1>PT DEWA NUSANTARA GLOBAL</h1>
           </Link>
         </div>
         <div className="header__navbar-links_container">

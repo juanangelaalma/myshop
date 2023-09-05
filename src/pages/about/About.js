@@ -19,12 +19,10 @@ const About = () => {
     <div className='about'>
       <Navbar />
       <div className='about__content'>
-        <h1>MYSHOP</h1>
-        <p>Myshop is an e-commerce that can provide the best experience for buying and selling products</p>
-        <div className="about__content-creator">
-          <h5>Made by</h5>
-          <p>Juan Angela Alma</p>
-        </div>
+        <h1>PT DEWA NUSANTARA GLOBAL</h1>
+        <p>PT DEWA NUSANTARA GLOBAL adalah perusahaan yang berdedikasi untuk memberikan solusi berbagai macam produk berkualitas tinggi kepada pelanggan kami. Dengan pengalaman bertahun-tahun dalam industri ini, kami telah membangun reputasi sebagai salah satu penyedia produk terpercaya di pasar.
+          Visi Kami:
+          Visi kami adalah menjadi mitra terpercaya bagi pelanggan kami dalam memenuhi berbagai kebutuhan produk mereka. Kami bertujuan untuk memberikan produk berkualitas tinggi dengan harga yang bersaing serta layanan pelanggan yang unggul.</p>
       </div>
       <Footer />
     </div>

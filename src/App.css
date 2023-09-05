@@ -34,7 +34,7 @@ html {
 
   position: relative;
   overflow: hidden;
-  transition: all 1s;
+  transition: all 500ms;
   border: 1px solid var(--main-text-color);
 }
 

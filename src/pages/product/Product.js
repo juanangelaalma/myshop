@@ -2,8 +2,13 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import productsApi from "../../apis/productsApi";
 import Loader from "../../components/loader/Loader";
+import products from "../../data/products";
 
 import "./product.css";
+
+const filterProduct = (products, idProduct) => {
+  return products.find((product) => product.id === idProduct);
+}
 
 const Product = () => {
   const [dataProduct, setDataProduct] = useState({});
@@ -14,32 +19,15 @@ const Product = () => {
 
   useEffect(() => {
     setLoading(true);
-    productsApi
-      .get(`/${params.idProduct}`)
-      .then((response) => {
-        setLoading(false);
-        setDataProduct(response.data);
-        setError(null);
-      })
-      .catch((err) => {
-        setLoading(false);
-        setError(err.message);
-      });
+    const idProduct = parseInt(params.idProduct);
+    const product = filterProduct(products, idProduct);
+    setDataProduct(product);
+    setLoading(false);
   }, []);
 
   useEffect(() => {
     window.scrollTo(0,0);
   }, [])
-
-  const increment = () => {
-    setCount(count + 1);
-  };
-
-  const decrement = () => {
-    if(count > 1) {
-      setCount(count - 1);
-    }
-  };
 
   return (
     <div className="section__padding">
@@ -57,28 +45,11 @@ const Product = () => {
                 {dataProduct.category}
               </h5>
               <h1 className="product__content-attr_name">
-                {dataProduct.title}
+                {dataProduct.name}
               </h1>
-              <p className="product__content-attr_description">
-                {dataProduct.description}
+              <p dangerouslySetInnerHTML={{ __html: dataProduct.description }} className="product__content-attr_description">
+                
               </p>
-              <h4 className="product__content-attr_price">
-                $ {dataProduct.price}
-              </h4>
-            </div>
-            <div className="product__content-action">
-              <div className="product__content-action_count">
-                <button onClick={decrement} className="product__content-action_count-decre">
-                  -
-                </button>
-                <h4>{ count }</h4>
-                <button onClick={increment} className="product__content-action_count-incre">
-                  +
-                </button>
-              </div>
-              <button className="btn-main product__content-action_addtocart">
-                ADD TO CART
-              </button>
             </div>
           </div>
         </div>

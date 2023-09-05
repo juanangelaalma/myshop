@@ -4,41 +4,23 @@ import { useNavigate, useParams } from "react-router-dom";
 import { CardProduct } from "../../components";
 import Categories from "../../components/categories/Categories";
 import Loader from "../../components/loader/Loader";
-import {
-  fetchProductByCategory,
-  fetchProducts,
-  fetchProductsLimit,
-} from "../../redux/actions/products";
+import products from "../../data/products";
 
 import "./catalog.css";
 
 const Catalog = ({ buttonMore, categories, all }) => {
-  const products = useSelector((state) => state.products);
-  const dispatch = useDispatch();
   const navigate = useNavigate();
-  const params = useParams();
-
-  useEffect(() => {
-    if (all) {
-      if (params && params.category) {
-        dispatch(fetchProductByCategory(params.category));
-      } else {
-        dispatch(fetchProducts());
-      }
-    } else {
-      dispatch(fetchProductsLimit());
-    }
-  }, [params]);
-
-  useEffect(() => {
-    if (params && params.category) {
-      dispatch(fetchProductByCategory(params.category));
-    }
-  }, []);
 
   const onClickMore = () => {
     return navigate("/products");
   };
+
+  const max = buttonMore ? 4 : null;
+
+  const willShow = (productId) => {
+    if (!max) return true
+    return productId <= max;
+  }
 
   return (
     <div
@@ -46,26 +28,22 @@ const Catalog = ({ buttonMore, categories, all }) => {
       id="catalog"
       className="catalog section__padding"
     >
-      <h1 className="catalog__title">Products</h1>
+      <h1 className="catalog__title">Produk</h1>
       {categories && <Categories />}
       <div className="catalog__products">
-        {products.loading && <Loader /> }
-        {!products.loading &&
-          products.products &&
-          products.products.map((product) => (
-            <CardProduct
-              key={product.id}
-              id={product.id}
-              image={product.image}
-              title={product.title}
-              price={`${product.price}$`}
-            />
+          {products.map((product) => (
+            willShow(product.id) && <CardProduct
+            key={product.id}
+            id={product.id}
+            image={product.image}
+            title={product.name}
+            price={`${product.price}$`}
+          />
           ))}
-        {products.error && <p>{products.error}</p>}
       </div>
       {buttonMore && (
         <button onClick={onClickMore} className="btn-main">
-          See all products
+          Lihat semua produk
         </button>
       )}
     </div>
